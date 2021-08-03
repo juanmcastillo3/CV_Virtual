@@ -1,0 +1,125 @@
+:root {
+  --color-primary: #343353;
+  --color-secondary: #ff4c60;
+  --color-terciary: #ffd15c;
+}
+
+/* ESTILOS GENERALES */
+* {
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /*Con esta propiedas ocultamos el contenido que se va fuera del viewport */
+}
+
+/* NAVBAR */
+.navbar-container__mobile {
+  display: none;
+}
+
+.navbar-container__desktop {
+  min-width: 290px;
+  max-width: 290px;
+  border-right: solid 1px rgba(255, 255, 255, 0.1);
+  background-color: var(--color-primary);
+}
+
+.full-container {
+  overflow-y: scroll; /*Con esta propiedas logramos que el eje y de nuestra pagina sea scrolleable */
+  scroll-behavior: smooth; /*Con esta propiedas logramos que las anclas de nuestra pagina se vean "suavizadas"*/
+  width: 100%;
+  height: 100%;
+}
+
+/* BANNER */
+.banner-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: var(--color-primary);
+}
+
+.background-image {
+  height: 100%;
+  width: 100%;
+  background-image: url("../imagenes/fondo.svg");
+  position: absolute;
+}
+
+.banner-container__scroll {
+  position: absolute;
+  bottom: 26px;
+}
+
+/* SKILS */
+
+/*SERVICES*/
+
+/*EXPERIENCE*/
+.experience-container__topics__card__data {
+  padding: 0 0 50px 50px;
+  border-left: 1px solid var(--color-secondary);
+  position: relative;
+}
+
+.experience-container__topics__card__data > i {
+  position: absolute;
+  left: -8px;
+  top: 0;
+}
+
+/* WORKS */
+.works-container__topics__card__mask {
+  background: #6c6ce5;
+  opacity: 0; /*Con esta propiedad le cambiamos la transparencia a nuestas cajas*/
+}
+
+.works-container__topics__card:hover > .works-container__topics__card__mask {
+  opacity: 0.9;
+}
+
+/* CONTACTME */
+
+/* FOOTER */
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .container {
+    max-width: initial;
+    width: 100%;
+  }
+
+  .navbar-container__desktop {
+    display: none;
+  }
+
+  .navbar-container__mobile {
+    display: block;
+    background-color: var(--color-primary);
+  }
+
+  .navbar-input,
+  .navbar-close {
+    display: none;
+  }
+  
+  .navbar-input:checked ~ .navbar-close {
+    display: block;
+  }
+  
+  .navbar-input:checked ~ .navbar-open {
+    display: none;
+  }
+
+  .navbar-contet {
+    display: none;
+  }
+  
+  .navbar-input:checked ~ .navbar-contet {
+    display: flex;
+  }
+}
